@@ -14,8 +14,8 @@ const mestwo = document.querySelector('#message2');
 form.addEventListener("submit", (event)=>{
    event.preventDefault();
     const location = search.value;
-    mesone.textContent = data.forecast;
-    fetch('http://localhost:3000/forecast?address='+location+'').then((response)=>{
+    mesone.textContent = "Loading...";
+    fetch('/forecast?address='+location+'').then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             mesone.value = data.error
