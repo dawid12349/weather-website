@@ -9,7 +9,8 @@ const forecast = (lat, lon, callback )=>{
             callback("unable to load data!", undefined);
          }
          else{
-            callback(undefined, "its " +  body.current.weather_descriptions[0] + " and it's " + body.current.temperature +" Celsius and it feels like: " +  body.current.feelslike)
+            callback(undefined, "its " +  body.current.weather_descriptions[0] + " and it's " + body.current.temperature +" Celsius and it feels like: " +  body.current.feelslike
+            + ' Wind speed: ' + body.current.wind_speed + ' humidtiy: ' + body.current.humidity )
          }
     });
 }
